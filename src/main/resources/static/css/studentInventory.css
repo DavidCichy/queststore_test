@@ -1,0 +1,38 @@
+.artifactCard {
+    height: 400px;
+    width: 300px;
+    background-image: url("/static/images/artifactTemplate.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.9;
+    border-radius: 5% 13% 13% 5%;
+    margin-bottom: 50px;
+}
+
+.artifactCategory {
+    font-size: 30px;
+}
+
+.artifactDescription {
+    margin-left: 30px;
+    margin-right: 50px;
+    font-size: 25px;
+}
+
+.artifactName {
+    font-size: 25px;
+    margin-bottom: 0px;
+}
+
+.availableArtifactPrice, .usedArtifactPrice {
+    font-size: 40px;
+}
+
+.availableArtifactPrice img, .usedArtifactPrice img {
+    height: 70px;
+    width: 70px;
+}
+
+.availableArtifactPrice img:hover{
+    cursor: pointer;
+}

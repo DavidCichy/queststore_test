@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Students</title>
+    <link rel="icon" href="/static/images/profileIcon.png" type="image/icon type">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/mentorStudentsManagement.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/static/js/mentorCommon.js"></script>
+</head>
+<body>
+
+<div class="container-fluid" id="topSection">
+    <div class="row h-100">
+        <div class="d-flex flex-row align-items-center justify-content-start w-10 flex-grow-1">
+            <a class="btn btn-outline-secondary" id="backButton" href="/mentor">Back?</a>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid" id="middleSection">
+    <div class="row h-100">
+        <div class="col-12" id="content">
+            <div class="container">
+                <h2>Students in school: <br></h2>
+            </div>
+            <div class="table-responsive-lg">
+                <table class="table table-dark table-hover">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>FirstName</th>
+                        <th>LastName</th>
+                        <th>Login</th>
+                        <th>Password</th>
+                        <th>Email</th>
+                        <th>Class</th>
+                        <th>Coins</th>
+                        <th>Experience</th>
+                        <th>Artifacts</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for student in studentsList %}
+                        <tr>
+                            <td>
+                                <div class="dropdown">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                        Mark quest done
+                                    </button>
+                                        <div class="dropdown-menu">
+                                            {% for quest in quests %}
+                                                <li><a tabindex="-1" href="/mentor/students/mark/{{ student.getId() }}&{{ quest.getId() }}">{{quest.getName()}}</a></li>
+                                            {% endfor %}
+                                        </div>
+                                </div>
+                            </td>
+                            <td><a>{{ student.getFirstName() }}</a></td>
+                            <td><a>{{ student.getLastName() }}</a></td>
+                            <td><a>{{ student.getLogin() }}</a></td>
+                            <td><a>{{ student.getPassword() }}</a></td>
+                            <td><a>{{ student.getEmail() }}</a></td>22
+                            <td>{{ student.getClassType() }}
+                                <div class="fa fa-ellipsis-v btn btn-primary" data-toggle="dropdown"></div>
+                                    <div class="dropdown-menu classType">
+                                        <a>Move to: </a>
+                                        <ul>
+                                        <li><a tabindex="-1" href="/mentor/studentsManagement/class/{{ student.getId() }}&progbasics">Progbasics </a></li>
+                                        <li><a tabindex="-1" href="/mentor/studentsManagement/class/{{ student.getId() }}&java">Java </a></li>
+                                        <li><a tabindex="-1" href="/mentor/studentsManagement/class/{{ student.getId() }}&web">Web </a></li>
+                                        <li><a tabindex="-1" href="/mentor/studentsManagement/class/{{ student.getId() }}&advanced">Advanced </a></li>
+                                        </ul>
+                                    </div>
+                            </td>
+                            <td><a>{{ student.getCoinsAmount() }}</a></td>
+                            <td><a>{{ student.getExperience() }}</a></td>
+                            <td><a>{% for artifact in student.getBoughtArtifacts() %} {{ artifact.getName() }}; {% if artifact.getIsUsed == false %} <i class="fa fa-check"></i> {% endif %}<br> {% endfor %}</a></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

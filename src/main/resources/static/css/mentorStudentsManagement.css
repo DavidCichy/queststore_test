@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'Deutsch Gothic';
+    src: local('Deutsch Gothic'), url('/static/fonts/deutsch.ttf') format('truetype');
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background: url('/static/images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    font-family:'Deutsch Gothic';
+}
+
+.classType {
+    font-family: 'Deutsch Gothic';
+}
+
+#topSection {
+    height: 11%;
+}
+
+#middleSection {
+    margin-top: 50px;
+    width: 90%;
+}
+
+#header{
+    margin-right: 20px;
+}
+
+#logoutButtonImage {
+    height: 70px;
+    width: 55px;
+}
+
+#signOut {
+    margin-top: 13px;
+    color: black;
+    font-size: 40px;
+}
+
+#backButton {
+    margin-top: 13px;
+    color: black;
+    font-size: 40px;
+}
+

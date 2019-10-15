@@ -1,0 +1,100 @@
+@font-face {
+    font-family: 'Deutsch Gothic';
+    src: local('Deutsch Gothic'), url('/static/fonts/deutsch.ttf') format('truetype');
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background: url('/static/images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    font-family:'Deutsch Gothic';
+}
+
+#menu {
+    height: 100%;
+    width: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 80px;
+    transition: 0.4s;
+}
+
+#menu a {
+    padding: 14px 0px 14px 0px;
+    margin-left: 10px;
+    font-size: 35px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+#menu a:hover {
+    color: #f1f1f1;
+}
+
+#closeMenuButton {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    font-size: 60px;
+    color: red;
+}
+
+#closeMenuButton:hover {
+    cursor: pointer;
+}
+
+#middleSection {
+    transition: margin-left .5s;
+    margin: 0px;
+}
+
+#topSection {
+    height: 11%;
+}
+
+#header{
+    margin-right: 20px;
+}
+
+#logoutButtonImage {
+    height: 70px;
+    width: 55px;
+}
+
+#signOut {
+    margin-top: 13px;
+    color: black;
+    font-size: 40px;
+}
+
+#openMenu {
+    margin-left: 20px;
+}
+
+#openMenu:hover {
+    cursor: pointer;
+}
+
+#openMenuImage {
+    height: 50px;
+    width: 50px;
+}
+
+#greeting {
+    font-size: 70px;
+}
+
+#greeting img {
+    height: 250px;
+    width: 250px;
+}
+
+#profile {
+    color: black;
+    font-size: 45px;
+}

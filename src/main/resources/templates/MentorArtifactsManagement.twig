@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Artifacts</title>
+    <link rel="icon" href="/static/images/profileIcon.png" type="image/icon type">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/mentorArtifactsManagement.css" />
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/static/js/mentorCommon.js"></script>
+</head>
+<body>
+
+<div class="container-fluid" id="topSection">
+    <div class="row h-100">
+        <div class="d-flex flex-row align-items-center justify-content-start w-10 flex-grow-1">
+            <a class="btn btn-outline-secondary" id="backButton" href="/mentor">Back?</a>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" id="middleSection">
+    <div class="row h-100">
+
+        <div class="col-12" id="content">
+            <div class="container">
+                <h2>Artifacts in store: <br></h2>
+            </div>
+            <div class="table-responsive-lg">
+                <table class="table table-dark table-hover">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for artifact in artifacts %}
+                        <tr>
+                            <td><div class="fa fa-bomb btn btn-primary" data-toggle="dropdown"></div>
+                                    <div class="dropdown-menu classType">
+                                        <a href="/mentor/artifacts/deleteArtifact/{{ artifact.getId() }}">  Confirm
+                                        delete?</a>
+                                    </div>
+                                </td>
+                            <td><a>{{ artifact.getId() }}</a></td>
+                            <td><a>{{ artifact.getName() }}</a></td>
+                            <td><a>{{ artifact.getDescription() }}</a></td>
+                            <td><a>{{ artifact.getPrice() }}</a></td>
+                            <td><a>{{ artifact.getCategory() }}</a></td>
+                        </tr>
+                    {% endfor %}
+                    <tr>
+                        <form method="POST" class="form-inline" action="/mentor/artifacts/addArtifact/new">
+                            <td><button type="submit" class="btn btn-primary">Add new</button></td>
+                            <td></td>
+                            <td><input type="text" class="form-control" id="title" placeholder="Enter Title" name="title"></td>
+                            <td><input type="text" class="form-control" id="description" placeholder="Enter Description" name="description"></td>
+                            <td><input type="text" class="form-control" id="reward" placeholder="Enter price" name="price"></td>
+                            <td><input type="text" class="form-control" id="category" placeholder="magic / basic / ?" name="category"></td>
+                        </form>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
