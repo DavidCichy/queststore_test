@@ -20,12 +20,12 @@ class DatabaseConnectionTest {
     @org.junit.jupiter.api.Test
     void checkIfDefaultConnectionIsValid() throws SQLException {
         Connection connection = dbconnection.setConnection();
-        assertEquals(true, connection.isValid(100));
+        assertTrue(connection.isValid(100));
     }
 
     @org.junit.jupiter.api.Test
     void checkIfCorrectConnectionIsValid() throws SQLException {
-        Connection connection = dbconnection.setConnection("jdbc:postgresql://localhost:5432/QuestStore", "postgres", "fallout");
+        Connection connection = dbconnection.setConnection("jdbc:postgresql://localhost:5432/QuestStore", "postgres", "root");
         assertEquals(true, connection.isValid(100));
     }
 
