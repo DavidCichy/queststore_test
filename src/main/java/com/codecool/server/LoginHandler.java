@@ -69,6 +69,12 @@ public class LoginHandler implements HttpHandler {
                 response = helper.getTemplateAfterLoggingFail();
             }
         }
-        helper.sendResponse(httpExchange, response);
+        //todo czy to poprawne do testow robic takie zmiany ?
+        if(response != null){
+            helper.sendResponse(httpExchange, response);
+        }
+
+
+
     }
 }
