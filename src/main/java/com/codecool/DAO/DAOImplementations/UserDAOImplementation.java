@@ -9,13 +9,20 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserDAOImplementation implements UserDAO {
+    DatabaseConnection databaseConnection;
+
+    public UserDAOImplementation() {
+        this.databaseConnection = new DatabaseConnection();
+    }
+
+    public UserDAOImplementation(DatabaseConnection databaseConnection) {
+        this.databaseConnection = databaseConnection;
+    }
 
     @Override
     public String getTypeByID(int userID) {
         String userType = null;
-        DatabaseConnection databaseConnection = new DatabaseConnection();
         try {
-            databaseConnection = new DatabaseConnection();
             Connection connection = databaseConnection.setConnection();
             PreparedStatement pstmt = connection.prepareStatement("select ut.type as type from users\n" +
                     "left join user_types ut on ut.id = users.type\n where users.id = ?;");

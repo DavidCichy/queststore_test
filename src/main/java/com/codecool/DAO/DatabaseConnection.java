@@ -5,9 +5,17 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseConnection {
+    Connection connection;
+
+    public DatabaseConnection() {
+        connection = setConnection("jdbc:postgresql://localhost:5432/QuestStore", "postgres", "root");
+    }
+
+    public DatabaseConnection(String db, String username,String pass) {
+        connection = setConnection(db, username, pass);
+    }
 
     public Connection setConnection() {
-        Connection connection = setConnection("jdbc:postgresql://localhost:5432/QuestStore", "postgres", "fallout");
         return connection;
     }
 
