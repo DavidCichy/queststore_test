@@ -17,7 +17,7 @@ public class Controller {
     }
 
     public void run() throws IOException {
-        HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
+        HttpServer server = HttpServer.create(new InetSocketAddress(8010), 0);
 
         ArtifactDAOImplementation artifactDAO = new ArtifactDAOImplementation();
         ClassDAOImplementation classDAO = new ClassDAOImplementation();

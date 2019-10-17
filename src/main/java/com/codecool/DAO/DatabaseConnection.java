@@ -1,14 +1,19 @@
 package com.codecool.DAO;
 
+import com.codecool.DAO.DAOImplementations.ConnectionSettings;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseConnection {
-    Connection connection;
+    private Connection connection;
 
     public DatabaseConnection() {
-        connection = setConnection("jdbc:postgresql://localhost:5432/QuestStore", "postgres", "root");
+        String url = ConnectionSettings.url;
+        String user = ConnectionSettings.user;
+        String password = ConnectionSettings.password;
+        connection = setConnection(url, user, password);
     }
 
     public DatabaseConnection(String db, String username,String pass) {
@@ -23,12 +28,15 @@ public class DatabaseConnection {
         Connection connection = null;
         try {
             connection = DriverManager.getConnection(db, user, password);
-            connection.setAutoCommit(false);
         } catch (SQLException e) {
             System.err.println("SQLException: " + e.getMessage()
                     + "\nSQLState: " + e.getSQLState()
                     + "\nVendorError: " + e.getErrorCode());
         }
+        return connection;
+    }
+
+    public Connection getConnection() {
         return connection;
     }
 }

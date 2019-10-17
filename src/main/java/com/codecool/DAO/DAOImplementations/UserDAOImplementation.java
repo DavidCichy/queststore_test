@@ -32,7 +32,6 @@ public class UserDAOImplementation implements UserDAO {
                 userType = rs.getString("type");
             }
             pstmt.close();
-            connection.commit();
             connection.close();
         } catch (SQLException e) {
             System.err.println("SQLException: " + e.getMessage()
@@ -90,7 +89,7 @@ public class UserDAOImplementation implements UserDAO {
         try {
             databaseConnection = new DatabaseConnection();
             Connection connection = databaseConnection.setConnection();
-            PreparedStatement pstmt = connection.prepareStatement("delete from users where user_id = ?");
+            PreparedStatement pstmt = connection.prepareStatement("delete from users where id = ?");
             pstmt.setInt(1, userID);
 
             pstmt.executeUpdate();

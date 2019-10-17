@@ -1,0 +1,14 @@
+INSERT INTO "ShopTest".public.quests (id, name, description, reward, category) VALUES (1, 'Spot trap', 'Spot a major mistake in the assignment', 50, 1);
+INSERT INTO "ShopTest".public.quests (id, name, description, reward, category) VALUES (2, 'Taming a pet', 'Doing a demo about a pet project', 100, 1);
+INSERT INTO "ShopTest".public.quests (id, name, description, reward, category) VALUES (3, 'Recruiting some n00bs', 'Taking part in the student creening process', 100, 1);
+INSERT INTO "ShopTest".public.quests (id, name, description, reward, category) VALUES (4, 'Forging weapons', 'Organizing a workshop for other students', 400, 1);
+INSERT INTO "ShopTest".public.quests (id, name, description, reward, category) VALUES (5, 'Master the mornings', 'Attend 1 month without being late', 300, 1);
+INSERT INTO "ShopTest".public.quests (id, name, description, reward, category) VALUES (6, 'Fast as an unicorn', 'Deliver 4 consecutive SI week assignments on time', 500, 1);
+INSERT INTO "ShopTest".public.quests (id, name, description, reward, category) VALUES (7, 'Achiever', 'Set up a SMART goal accepted by a mentor, then achieve it', 1000, 1);
+INSERT INTO "ShopTest".public.quests (id, name, description, reward, category) VALUES (8, 'Fortune', 'Students choose the best project of the week. Selected team scores', 500, 1);
+INSERT INTO "ShopTest".public.quests (id, name, description, reward, category) VALUES (10, 'Enter the arena', 'Do a presentation on a meet-up', 500, 1);
+INSERT INTO "ShopTest".public.quests (id, name, description, reward, category) VALUES (11, 'Exploring a dungeon', 'Finishing a Teamwork week', 100, 2);
+INSERT INTO "ShopTest".public.quests (id, name, description, reward, category) VALUES (12, 'Solving the magic puzzle', 'Finishing an SI assignment', 100, 2);
+INSERT INTO "ShopTest".public.quests (id, name, description, reward, category) VALUES (13, 'Slaying a dragon', 'Passing a Checkpoint', 500, 2);
+INSERT INTO "ShopTest".public.quests (id, name, description, reward, category) VALUES (9, 'Creating an scroll', 'Creating extra material for the current TW/SI topic (should be revised by mentors)', 500, 1);
+INSERT INTO "ShopTest".public.quests (id, name, description, reward, category) VALUES (14, 'XDDDDD', 'dupa', 500, 1);
